@@ -9,8 +9,10 @@ namespace cw1
     {
         static async Task Main(string[] args)
         {
+            Console.WriteLine("podaj adres");
+            string adress = Console.ReadLine();
             var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync("https://www.pja.edu.pl/");
+            var response = await httpClient.GetAsync(adress);
 
             if (response.IsSuccessStatusCode)
             {
